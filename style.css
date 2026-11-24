@@ -1,78 +1,195 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
-body{
-
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:100vh;
-
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: #eaf2ee;
+    color: #263c35;
 }
 
-.calculadora{
-
-    background:white;
-    padding:30px;
-
-    width:350px;
-
-    border-radius:10px;
-
-    box-shadow:0px 0px 10px rgba(0,0,0,.2);
-
+.container {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(38, 60, 53, 0.10);
 }
 
-h1{
-
-    text-align:center;
-    margin-bottom:20px;
-
+.header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-label{
-
-    display:block;
-    margin-top:15px;
-
+.logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #d9eee4;
+    color: #25805c;
+    font-size: 32px;
+    font-weight: 800;
 }
 
-input{
-
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-
+.tag {
+    color: #25805c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
-.botoes{
-
-    display:flex;
-    justify-content:space-between;
-
-    margin-top:20px;
-
+h1 {
+    margin: 10px 0 5px;
+    font-size: 30px;
+    font-weight: 800;
+    color: #263c35;
 }
 
-button{
-
-    width:48%;
-    padding:10px;
-
-    cursor:pointer;
-
+.header p {
+    color: #899b92;
+    font-size: 14px;
 }
 
-#resultado{
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
 
-    margin-top:25px;
-    text-align:center;
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
 
+label {
+    font-size: 13px;
+    font-weight: 800;
+    color: #405b4e;
+}
+
+input,
+select {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border: 1px solid #dce8e1;
+    border-radius: 11px;
+    background: #f8fbf9;
+    color: #263c35;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #36a477;
+    box-shadow: 0 0 0 3px rgba(54, 164, 119, 0.12);
+}
+
+input::placeholder {
+    color: #a8b7ae;
+}
+
+select {
+    cursor: pointer;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr 0.7fr;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+button {
+    height: 46px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.limpar,
+.extra {
+    color: #39775b;
+    background: #e5f3eb;
+}
+
+.limpar:hover,
+.extra:hover {
+    background: #d3ebdc;
+}
+
+.calcular {
+    grid-column: 1 / -1;
+    height: 52px;
+    color: white;
+    background: #25805c;
+}
+
+.calcular:hover {
+    background: #196747;
+}
+
+.resultado {
+    margin-top: 7px;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    background: #edf7f0;
+    border: 1px solid #d8ecdf;
+}
+
+.resultado span {
+    color: #629078;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+#resultado {
+    margin-top: 8px;
+    color: #25805c;
+    font-size: 26px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    color: #a0aea5;
+    font-size: 11px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
 }
